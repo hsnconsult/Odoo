@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sale_vendeursdet_report" model="ir.actions.report">
+        <field name="name">Details vendeurs</field>
+        <field name="model">report.caisse.report_vendeursdet</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">caisse.report_vendeursdet</field>
+    </record>
+
+    <record id="sale_rayonsdet_report" model="ir.actions.report">
+        <field name="name">Details rayons</field>
+        <field name="model">report.caisse.report_rayonsdet</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">caisse.report_rayonsdet</field>
+    </record>
+
+    <record id="sale_vendeurs_report" model="ir.actions.report">
+        <field name="name">Etat vendeurs</field>
+        <field name="model">report.caisse.report_vendeurs</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">caisse.report_vendeurs</field>
+    </record>
+
+</odoo>

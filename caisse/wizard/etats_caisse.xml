@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_pos_vendeursdet_wizard" model="ir.ui.view">
+            <field name="name">pos.vendeursdet.wizard.form</field>
+            <field name="model">pos.vendeursdet.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Sales Details">
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="vendeur"/>
+                    </group>
+                    <group>
+                        <field name="pos_config_ids" colspan="4" nolabel="1" />
+                    </group>
+                    <footer>
+                        <button name="generate_report" string="Imprimer" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="Annuler" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_report_pos_vendeursdet" model="ir.actions.act_window">
+            <field name="name">Détail vendeurs</field>
+            <field name="res_model">pos.vendeursdet.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="view_pos_rayonsdet_wizard" model="ir.ui.view">
+            <field name="name">pos.rayonsdet.wizard.form</field>
+            <field name="model">pos.rayonsdet.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Sales Details">
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="rayon"/>
+                    </group>
+                    <group>
+                        <field name="pos_config_ids" colspan="4" nolabel="1" />
+                    </group>
+                    <footer>
+                        <button name="generate_report" string="Imprimer" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="Annuler" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_report_pos_rayonsdet" model="ir.actions.act_window">
+            <field name="name">Détail rayons</field>
+            <field name="res_model">pos.rayonsdet.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="view_pos_vendeurs_wizard" model="ir.ui.view">
+            <field name="name">pos.vendeurs.wizard.form</field>
+            <field name="model">pos.vendeurs.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Sales Details">
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                    <group>
+                        <field name="pos_config_ids" colspan="4" nolabel="1" />
+                    </group>
+                    <footer>
+                        <button name="generate_report" string="Imprimer" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="Annuler" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_report_pos_vendeurs" model="ir.actions.act_window">
+            <field name="name">Etat vendeurs</field>
+            <field name="res_model">pos.vendeurs.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem id="menu_report_vendeurs" name="Etat par vendeur" action="action_report_pos_vendeurs" parent="point_of_sale.menu_point_rep" sequence="5"/>
+        <menuitem id="menu_report_vendeursdet" name="Etat détaillé vendeur" action="action_report_pos_vendeursdet" parent="point_of_sale.menu_point_rep" sequence="7"/>
+        <menuitem id="menu_report_rayonsdet" name="Etat par rayon" action="action_report_pos_rayonsdet" parent="point_of_sale.menu_point_rep" sequence="9"/>
+</odoo>
